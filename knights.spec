@@ -70,7 +70,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes
 mv $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/{knights-themepack/*.tar.gz,}
 rm -rf $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/knights-themepack
 mv $RPM_BUILD_ROOT%{_desktopdir}/{Games/Board/,}knights.desktop
-echo "Categories=Qt;KDE;Game;BoardGame" >> $RPM_BUILD_ROOT%{_desktopdir}/knights.desktop
+echo "Categories=Qt;KDE;Game;BoardGame;" >> $RPM_BUILD_ROOT%{_desktopdir}/knights.desktop
 
 %find_lang %{name} --with-kde
 
