@@ -1,26 +1,23 @@
+Summary:	A KDE based chess environment
+Summary(pl):	¦rodowisko do gry w szachy dla KDE
 Name:		knights
-Summary:	A KDE based chess enviroment
-Summary(pl):	¦rodowisko gry w szachy dla KDE
 Version:	0.6
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/sourceforge/knights/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/knights/%{name}-%{version}.tar.gz
 # Source0-md5:	b04574568b9bc3982b934328ee63fb74
-Source1:	http://dl.sourceforge.net/sourceforge/knights/knights-themepack-0.5.9.tar.gz
+Source1:	http://dl.sourceforge.net/knights/knights-themepack-0.5.9.tar.gz
 # Source1-md5:	ece32b73d43e16b997423c219dcda21d
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Url:		http://www.knights-chess.com
-Requires:	libpng
-Requires:	audiofile
-BuildRequires:	libpng-devel
-BuildRequires:	kdelibs-devel
+URL:		http://www.knights-chess.com/
 BuildRequires:	arts-devel
-BuildRequires:	libjpeg-devel
 BuildRequires:	audiofile-devel
-BuildRequires:	XFree86-devel
-BuildRequires:	zlib-devel
+BuildRequires:	kdelibs-devel >= 3.0
+BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
 BuildRequires:	qt-devel >= 3.0.2
+BuildRequires:	zlib-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
 
@@ -33,8 +30,7 @@ customizable board and pieces; audio cues; move previews; and much
 much more...
 
 %description -l pl
-
-Knights d±zy do tego, by byæ najlepszym programem szachowym na twoim
+Knights d±¿y do tego, by byæ najlepszym programem szachowym na twoim
 komputerze. Napisany zosta³ dla KDE, jest zaprojektowany w sposób
 przyjazny dla nowych graczy, jak te¿ funkcjonalny dla Wielkich
 Mistrzów. Cechy Knights to: mo¿liwo¶æ gry jednego, i wielu graczy, jak
@@ -45,13 +41,13 @@ podpowiedzi d¼wiêkowe; podgl±d ruchów i wiele, wiele innych...
 Summary:	Knights themepack
 Summary(pl):	Zestaw motywów do knights
 Group:		Themes
-Requires:	%{name}
+Requires:	%{name} = %{version}
 
 %description themes
 Additional themes for the Knights chess enviroment.
 
 %description themes -l pl
-Dodakowe motywy do ¶rodowiska gry w szachy knights.
+Dodatkowe motywy do ¶rodowiska gry w szachy knights.
 
 %prep
 %setup -q
@@ -66,32 +62,34 @@ kde_icondir="%{_pixmapsdir}"; export kde_icondir
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/
-%{__tar} xfz %{SOURCE1} -C $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/
+install -d $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes
+%{__tar} xfz %{SOURCE1} -C $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes
 mv $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/{knights-themepack/*.tar.gz,}
-rm -rf $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/knights-themepack/
+rm -rf $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/knights-themepack
 mv $RPM_BUILD_ROOT%{_desktopdir}/{Games/Board/,}knights.desktop
 echo "Categories=Qt;KDE;Game;BoardGame" >> $RPM_BUILD_ROOT%{_desktopdir}/knights.desktop
 
-%find_lang knights --with-kde
+%find_lang %{name} --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f knights.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING README INSTALL
+%doc AUTHORS README
 %attr(755,root,root) %{_bindir}/%{name}*
-%{_datadir}/apps/%{name}/[!t]*
+%dir %{_datadir}/apps/knights
+%{_datadir}/apps/knights/[!t]*
 %{_desktopdir}/knights.desktop
 %{_datadir}/mimelnk/application/pgn.desktop
 %dir %{_datadir}/apps/knights/themes
 %{_datadir}/apps/knights/themes/KBDefault.tar.gz
 %{_datadir}/apps/knights/themes/KCDefault.tar.gz
 %{_datadir}/apps/knights/themes/KSDefault.tar.gz
-%{_pixmapsdir}/*
+%{_pixmapsdir}/*/*/*/*.png
 
 %files themes
 %defattr(644,root,root,755)
