@@ -11,17 +11,15 @@ Source1:	http://dl.sourceforge.net/knights/knights-themepack-0.5.9.tar.gz
 # Source1-md5:	ece32b73d43e16b997423c219dcda21d
 URL:		http://www.knights-chess.com/
 BuildRequires:	arts-devel
-BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	audiofile-devel
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	qt-devel >= 3.0.2
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 Knights aims to be the ultimate chess resource on your computer.
@@ -43,7 +41,7 @@ podpowiedzi d¼wiêkowe; podgl±d ruchów i wiele, wiele innych...
 Summary:	Knights themepack
 Summary(pl):	Zestaw motywów do knights
 Group:		Themes
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description themes
 Additional themes for the Knights chess enviroment.
@@ -56,8 +54,7 @@ Dodatkowe motywy do ¶rodowiska gry w szachy knights.
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 cp -f /usr/share/automake/config.sub admin/config.sub
 %configure
 %{__make}
@@ -92,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/knights/themes/KBDefault.tar.gz
 %{_datadir}/apps/knights/themes/KCDefault.tar.gz
 %{_datadir}/apps/knights/themes/KSDefault.tar.gz
-%{_pixmapsdir}/*/*/*/*.png
+%{_iconsdir}/*/*/*/*.png
 
 %files themes
 %defattr(644,root,root,755)
