@@ -5,7 +5,7 @@ Version:	0.6
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://l.sourceforge.net/sourceforge/knights/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/sourceforge/knights/%{name}-%{version}.tar.gz
 # Source0-md5:  b04574568b9bc3982b934328ee63fb74
 Source1:	http://dl.sourceforge.net/sourceforge/knights/knights-themepack-0.5.9.tar.gz
 # Source1-md5:  ece32b73d43e16b997423c219dcda21d
