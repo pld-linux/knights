@@ -11,6 +11,8 @@ Source1:	http://dl.sourceforge.net/knights/knights-themepack-0.5.9.tar.gz
 # Source1-md5:	ece32b73d43e16b997423c219dcda21d
 URL:		http://www.knights-chess.com/
 BuildRequires:	arts-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	audiofile-devel
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	libjpeg-devel
@@ -56,6 +58,7 @@ Dodatkowe motywy do ¶rodowiska gry w szachy knights.
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
+cp -f /usr/share/automake/config.sub admin/config.sub
 %configure
 %{__make}
 
