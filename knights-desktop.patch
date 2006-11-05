@@ -1,0 +1,22 @@
+--- knights-0.6/knights/knights.desktop.orig	2001-11-20 00:17:53.000000000 +0100
++++ knights-0.6/knights/knights.desktop	2006-11-05 14:00:05.000000000 +0100
+@@ -1,4 +1,5 @@
+ [Desktop Entry]
++Encoding=UTF-8
+ Type=Application
+ Exec=knights
+ Icon=knights.png
+@@ -7,10 +8,10 @@
+ Name[de]=Knights
+ Comment=A graphical chess interface
+ Comment[de]=A graphical chess interface
++Comment[pl]=Graficzny interfejs do szachów
+ InitialPreference=1
+-MimeType=application/x-chess-pgn,Application
++MimeType=application/x-chess-pgn;
+ ServiceTypes=
+ DocPath=knights/index.html
+ Terminal=false
+-
+-
++Categories=Qt;KDE;Game;BoardGame;
