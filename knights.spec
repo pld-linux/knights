@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/knights/%{name}-%{version}.tar.gz
 # Source0-md5:	b04574568b9bc3982b934328ee63fb74
 Source1:	http://dl.sourceforge.net/knights/knights-themepack-0.5.9.tar.gz
 # Source1-md5:	ece32b73d43e16b997423c219dcda21d
+Patch0:		%{name}-desktop.patch
 URL:		http://www.knights-chess.com/
 BuildRequires:	arts-devel
 BuildRequires:	automake
@@ -51,12 +52,14 @@ Dodatkowe motywy do ¶rodowiska gry w szachy knights.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 kde_appsdir="%{_desktopdir}"; export kde_appsdir
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 cp -f /usr/share/automake/config.sub admin/config.sub
-%configure
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
@@ -70,7 +73,6 @@ install -d $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes
 mv $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/{knights-themepack/*.tar.gz,}
 rm -rf $RPM_BUILD_ROOT%{_datadir}/apps/knights/themes/knights-themepack
 mv $RPM_BUILD_ROOT%{_desktopdir}/{Games/Board/,}knights.desktop
-echo "Categories=Qt;KDE;Game;BoardGame;" >> $RPM_BUILD_ROOT%{_desktopdir}/knights.desktop
 
 %find_lang %{name} --with-kde
 
