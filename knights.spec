@@ -1,5 +1,5 @@
 Summary:	A KDE based chess environment
-Summary(pl):	¦rodowisko do gry w szachy dla KDE
+Summary(pl.UTF-8):   Åšrodowisko do gry w szachy dla KDE
 Name:		knights
 Version:	0.6
 Release:	3
@@ -30,25 +30,25 @@ of Knights' key features include: single, multi, and Internet play;
 customizable board and pieces; audio cues; move previews; and much
 much more...
 
-%description -l pl
-Knights d±¿y do tego, by byæ najlepszym programem szachowym na twoim
-komputerze. Napisany zosta³ dla KDE, jest zaprojektowany w sposób
-przyjazny dla nowych graczy, jak te¿ funkcjonalny dla Wielkich
-Mistrzów. Cechy Knights to: mo¿liwo¶æ gry jednego, i wielu graczy, jak
-te¿ gry przez Internet; mo¿liwo¶æ wybory stylu szachownicy i figur;
-podpowiedzi d¼wiêkowe; podgl±d ruchów i wiele, wiele innych...
+%description -l pl.UTF-8
+Knights dÄ…Å¼y do tego, by byÄ‡ najlepszym programem szachowym na twoim
+komputerze. Napisany zostaÅ‚ dla KDE, jest zaprojektowany w sposÃ³b
+przyjazny dla nowych graczy, jak teÅ¼ funkcjonalny dla Wielkich
+MistrzÃ³w. Cechy Knights to: moÅ¼liwoÅ›Ä‡ gry jednego, i wielu graczy, jak
+teÅ¼ gry przez Internet; moÅ¼liwoÅ›Ä‡ wybory stylu szachownicy i figur;
+podpowiedzi dÅºwiÄ™kowe; podglÄ…d ruchÃ³w i wiele, wiele innych...
 
 %package themes
 Summary:	Knights themepack
-Summary(pl):	Zestaw motywów do knights
+Summary(pl.UTF-8):   Zestaw motywÃ³w do knights
 Group:		Themes
 Requires:	%{name} = %{version}-%{release}
 
 %description themes
 Additional themes for the Knights chess enviroment.
 
-%description themes -l pl
-Dodatkowe motywy do ¶rodowiska gry w szachy knights.
+%description themes -l pl.UTF-8
+Dodatkowe motywy do Å›rodowiska gry w szachy knights.
 
 %prep
 %setup -q
