@@ -1,5 +1,5 @@
 Summary:	A KDE based chess environment
-Summary(pl.UTF-8):   Środowisko do gry w szachy dla KDE
+Summary(pl.UTF-8):	Środowisko do gry w szachy dla KDE
 Name:		knights
 Version:	0.6
 Release:	3
@@ -40,7 +40,7 @@ podpowiedzi dźwiękowe; podgląd ruchów i wiele, wiele innych...
 
 %package themes
 Summary:	Knights themepack
-Summary(pl.UTF-8):   Zestaw motywów do knights
+Summary(pl.UTF-8):	Zestaw motywów do knights
 Group:		Themes
 Requires:	%{name} = %{version}-%{release}
 
