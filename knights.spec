@@ -17,7 +17,7 @@ BuildRequires:	audiofile-devel
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	qt-devel >= 3.0.2
+BuildRequires:	qt-devel >= 6:3.0.2
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
