@@ -45,7 +45,7 @@ Group:		Themes
 Requires:	%{name} = %{version}-%{release}
 
 %description themes
-Additional themes for the Knights chess enviroment.
+Additional themes for the Knights chess environment.
 
 %description themes -l pl.UTF-8
 Dodatkowe motywy do środowiska gry w szachy knights.
