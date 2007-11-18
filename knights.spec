@@ -20,6 +20,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	qt-devel >= 6:3.0.2
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	zlib-devel
+Suiggests:	gnuchess
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
