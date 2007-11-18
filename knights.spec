@@ -2,7 +2,7 @@ Summary:	A KDE based chess environment
 Summary(pl.UTF-8):	Środowisko do gry w szachy dla KDE
 Name:		knights
 Version:	0.6
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/knights/%{name}-%{version}.tar.gz
